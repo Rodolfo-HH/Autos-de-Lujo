@@ -1,35 +1,199 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Página Principal</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nombre del Equipo</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+
+    /* RESET */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
+      background-color: #0d0d0d;
+      font-family: 'Orbitron', sans-serif;
+      color: #00ff99; /* verde neón */
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ENCABEZADO */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background: linear-gradient(90deg, #121212 0%, #1a1a1a 100%);
+      border-bottom: 2px solid #00ff99;
+      box-shadow: 0 0 15px #00ff99;
+    }
+
+    .team-name {
+      font-size: 2.5rem;
+      letter-spacing: 2px;
+      text-shadow: 0 0 8px #00ff99;
+      user-select: none;
+    }
+
+    .logo img {
+      height: 60px;
+      filter: drop-shadow(0 0 6px #00ff99);
+    }
+
+    /* NAVEGACIÓN - TABLA */
+    nav {
+      background-color: #111;
+      border-bottom: 2px solid #00ff99;
+      box-shadow: 0 0 10px #00ff99 inset;
+    }
+
+    table.nav-table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+      user-select: none;
+    }
+
+    .nav-table td {
+      padding: 15px 0;
       text-align: center;
-      margin-top: 50px;
+      color: #00ff99;
+      font-weight: 700;
+      font-size: 1.2rem;
+      border-right: 1px solid #00ff99;
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s, text-shadow 0.3s;
+      text-shadow: 0 0 5px #00ff99;
     }
-    h1 {
-      color: #333;
+
+    .nav-table td:last-child {
+      border-right: none;
     }
-    .enlaces a {
-      display: block;
-      margin: 15px;
-      font-size: 24px;
-      text-decoration: none;
-      color: #007BFF;
+
+    .nav-table td:hover {
+      background-color: #00ff99;
+      color: #0d0d0d;
+      text-shadow: none;
     }
-    .enlaces a:hover {
-      text-decoration: underline;
+
+    /* CONTENIDO PRINCIPAL */
+    main {
+      flex: 1;
+      padding: 40px 60px;
+      background: #121212;
+      box-shadow: inset 0 0 50px #00ff9977;
+      border-radius: 10px;
+      margin: 30px auto;
+      max-width: 900px;
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      color: #00ffa0;
+      font-size: 2rem;
+      margin-bottom: 15px;
+      text-shadow: 0 0 10px #00ffa0;
+      border-bottom: 2px solid #00ff99;
+      padding-bottom: 8px;
+      user-select: none;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #b0f7c1;
+    }
+
+    /* PIE DE PÁGINA */
+    footer {
+      background-color: #111;
+      color: #00ff99;
+      text-align: center;
+      padding: 20px 0;
+      font-size: 1rem;
+      border-top: 2px solid #00ff99;
+      box-shadow: 0 0 15px #00ff99 inset;
+      user-select: none;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+      }
+
+      main {
+        padding: 20px 15px;
+        margin: 20px 10px;
+      }
+
+      .team-name {
+        font-size: 1.8rem;
+      }
+
+      .nav-table td {
+        font-size: 1rem;
+        padding: 12px 0;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>Bienvenido a la Página Principal</h1>
-  <div class="enlaces">
-    <a href="cobos.html">Cobos</a>
-    <a href="fernando.html">Fernando</a>
-    <a href="rodolfo.html">Rodolfo</a>
-  </div>
+
+  <!-- ENCABEZADO -->
+  <header>
+    <div class="team-name">Nombre del Equipo</div>
+    <div class="logo">
+      <img src="logo.png" alt="Logo del equipo" />
+    </div>
+  </header>
+
+  <!-- NAVEGACIÓN -->
+  <nav>
+    <table class="nav-table">
+      <tr>
+        <td><a href="index.html">Inicio</a></td>
+        <td><a href="Rodolfo.html">Rodolfo</a></td>
+        <td><a href="Fernando.html">Fernando</a></td>
+        <td><a href="juancarlos.html">Cobos</a></td>
+      </tr>
+    </table>
+  </nav>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main>
+    <section>
+      <h2>Descripción del Equipo</h2>
+      <p>
+        Nuestro equipo está conformado por profesionales dedicados y apasionados por la innovación automotriz.
+        Cada integrante aporta habilidades únicas que nos permiten desarrollar proyectos con gran calidad y eficiencia.
+      </p>
+    </section>
+
+    <section>
+      <h2>Proyecto: Autos de Lujo</h2>
+      <p>
+        El proyecto "Autos de Lujo" tiene como objetivo presentar una plataforma que exhibe vehículos de alta gama,
+        destacando sus características, tecnologías avanzadas y el diseño exclusivo que los distingue en el mercado automotriz.
+      </p>
+    </section>
+  </main>
+
+  <!-- PIE DE PÁGINA -->
+  <footer>
+    &copy; 2025 Nombre del Equipo. Todos los derechos reservados.
+  </footer>
+
 </body>
 </html>
